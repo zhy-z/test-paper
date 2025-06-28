@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-4 rounded-lg shadow-md">
+  <div class="hidden sm:block bg-white p-4 rounded-lg shadow-md">
     <div class="flex ">
       <button 
         @click="activeTab = 'knowledge'" 

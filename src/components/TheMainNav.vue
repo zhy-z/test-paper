@@ -1,9 +1,9 @@
 <template>
   <div class="bg-white shadow-sm">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 items-center py-2 gap-y-2">
-        <!-- Left: Logo and Location -->
-        <div class="flex items-center">
+      <div class="flex items-center py-2">
+        <!-- 左侧：Logo和江苏 -->
+        <div class="flex items-center flex-shrink-0">
           <router-link to="/">
             <img src="@/assets/img/logo.svg" alt="聚优试卷网 Logo" class="h-8" />
           </router-link>
@@ -14,24 +14,35 @@
             </svg>
           </div>
         </div>
-
-        <!-- Center: Search Bar -->
-        <div class="flex justify-center">
-          <div class="w-full max-w-sm flex items-center border-2 border-green-500 rounded-full overflow-hidden">
+        <!-- 中间：搜索框 -->
+        <div class="flex-1 flex justify-center">
+          <div class="hidden md:flex w-full max-w-sm items-center border-2 border-green-500 rounded-full overflow-hidden">
             <input type="text" placeholder="请输入关键词" class="px-4 py-1 w-full focus:outline-none text-sm">
             <button class="bg-green-500 text-white font-semibold px-6 py-1 hover:bg-green-600 text-sm">搜索</button>
           </div>
         </div>
-
-        <!-- Right: Spacer/Empty -->
-        <div class="hidden md:block"></div>
+        <!-- 右侧：菜单按钮，仅移动端显示 -->
+        <div class="flex items-center flex-shrink-0 md:hidden">
+          <button class="p-2" @click="toggleMobileMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- 移动端下方搜索框 -->
+      <div class="flex md:hidden justify-center mt-2">
+        <div class="w-full max-w-sm flex items-center border-2 border-green-500 rounded-full overflow-hidden mb-1.5">
+          <input type="text" placeholder="请输入关键词" class="px-4 py-1 w-full focus:outline-none text-sm">
+          <button class="bg-green-500 text-white font-semibold px-6 py-1 hover:bg-green-600 text-sm">搜索</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// No script needed for this static component
+import { toggleMobileMenu } from '@/store/ui.js'
 </script>
 
 <style scoped>

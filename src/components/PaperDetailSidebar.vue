@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-6">
+  <div class="hidden sm:block space-y-6">
     <!-- Download Box -->
     <div class="bg-white p-6 rounded-lg shadow-md text-center">
       <button class="bg-green-600 text-white font-bold py-3 px-12 rounded-lg w-full hover:bg-orange-600">

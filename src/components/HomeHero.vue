@@ -2,10 +2,14 @@
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
       <!-- Center: Carousel/Banner -->
-      <div class="col-span-12 md:col-span-7 rounded-lg overflow-hidden shadow-sm h-72">
-        <el-carousel height="288px" class="h-full">
+      <div class="col-span-12 md:col-span-7 rounded-lg overflow-hidden shadow-sm 
+            h-48 sm:h-56 md:h-72 lg:h-80">
+        <el-carousel height="100%" class="h-full w-full" :autoplay="true" :interval="4000" arrow="hover"
+          indicator-position="outside" :loop="true">
           <el-carousel-item v-for="item in carouselItems" :key="item.alt">
-            <img :src="item.src" :alt="item.alt" class="w-full h-full object-cover" />
+            <img :src="item.src" :alt="item.alt" class="w-full h-full object-cover object-center
+               hover:scale-105 transition-transform duration-300 ease-in-out
+               cursor-pointer select-none" loading="lazy" draggable="false" />
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -38,8 +42,8 @@ import gaokaofenxi from '@/assets/img/gaokaofenxi.png';
 import zhinengzujuan from '@/assets/img/zhinengzujuan.png';
 
 const carouselItems = ref([
-  { src:"https://cdn.stzy.com/stzy/2025-06-06/fa07f91e-234a-4988-8575-72345b525c41/1749174604119.jpg", alt: '精品题库' },
+  { src: "https://cdn.stzy.com/stzy/2025-06-06/fa07f91e-234a-4988-8575-72345b525c41/1749174604119.jpg", alt: '精品题库' },
   { src: "https://cdn.stzy.com/stzy/2025-06-06/fd08bdaf-b3fc-4fbf-b9e2-e2ecdef5bb2c/1749170679934.jpg", alt: '高考分析' },
   { src: "https://cdn.stzy.com/stzy/2025-06-06/fd08bdaf-b3fc-4fbf-b9e2-e2ecdef5bb2c/1749170679934.jpg", alt: '智能组卷' },
 ]);
-</script> 
+</script>

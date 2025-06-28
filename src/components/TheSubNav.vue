@@ -5,7 +5,7 @@
         <!-- Left: Category Selector & Main Nav -->
         <div class="flex items-center">
           <!-- Dropdown container -->
-          <div 
+          <!-- <div 
             class="relative"
             @mouseover="isDropdownOpen = true"
             @mouseleave="isDropdownOpen = false"
@@ -17,7 +17,7 @@
               初中数学
             </button>
 
-            <!-- Dropdown Menu -->
+          
             <div v-if="isDropdownOpen" class="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border w-[400px] p-4 z-50">
                 <div v-for="grade in categories" :key="grade.name" class="mb-4 last:mb-0">
                   <h3 class="text-base font-bold mb-2 flex items-center">
@@ -32,7 +32,7 @@
                   </div>
                 </div>
             </div>
-          </div>
+          </div> -->
           
           <nav class="hidden md:flex items-center space-x-6 ml-8">
             <router-link to="/" class="text-gray-800 font-bold hover:text-green-600 py-3" exact-active-class="text-green-600 border-green-600">首页</router-link>

@@ -13,17 +13,17 @@
         </a>
       </div>
 
-      <!-- Links Flex Container -->
-      <div class="flex flex-wrap -mx-2">
-        <div v-for="site in sites" :key="site.name" class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4">
-           <a :href="site.url" target="_blank"
+      <!-- Links Grid Container -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div v-for="site in sites" :key="site.name">
+           <div 
              class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center space-x-4 h-full">
             <img :src="site.logo" :alt="site.name" class="w-10 h-10 object-contain">
             <div>
               <h3 class="font-semibold text-gray-800">{{ site.name }}</h3>
               <p class="text-xs text-gray-400 truncate">{{ site.url }}</p>
             </div>
-          </a>
+           </div>
         </div>
       </div>
     </div>
